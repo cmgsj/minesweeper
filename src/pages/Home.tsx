@@ -21,7 +21,7 @@ const MainPage = () => {
 
   const submitFormHandler = (boardConfig: BoardConfig) => {
     dispatch(
-      boardActions.createCustomBoard({
+      boardActions.createEmptyBoard({
         rows: boardConfig.rows,
         columns: boardConfig.columns,
         mines: boardConfig.mines,

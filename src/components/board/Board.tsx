@@ -17,7 +17,7 @@ const Board = () => {
   for (let row = 0; row < boardItems.length; row++) {
     for (let col = 0; col < boardItems[row].length; col++) {
       board.push(
-        <Tile key={row.toString() +'-'+ col.toString()} row={row} col={col} />
+        <Tile key={row.toString() + '-' + col.toString()} row={row} col={col} />
       );
     }
   }
