@@ -1,0 +1,50 @@
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: black;
+}
+
+.link {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  font-size: large;
+  color: #420079;
+  background-color: none;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border-color: #420079;
+}
+
+.link:hover,
+.link:active {
+  background-color: #420079;
+  color: white;
+}
+
+.button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+  font-size: large;
+  color: #420079;
+  background-color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.button:hover,
+.button:active {
+  background-color: #420079;
+  color: white;
+}

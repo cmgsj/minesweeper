@@ -1,0 +1,89 @@
+.form {
+  justify-content: space-around;
+  border: 5px solid;
+  color: dimgray;
+}
+
+.form div {
+  margin: 1rem;
+}
+
+.form label {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  font-family:monospace;
+}
+
+.form span {
+  font-weight: bold;
+  font-size: x-large;
+  font-family: 'Orbitron';
+  color: black;
+}
+
+.bottom {
+  display: block;
+
+}
+
+input[type='range'] {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 0.35em;
+  background: white;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 1.1em;
+  width: 1.1em;
+  border-radius: 50%;
+  background: dimgray;
+  margin-top: -4px;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+.form button {
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background-color: #420079;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin: 1rem;
+  height: 3rem;
+}
+
+.form button:hover,
+.form button:active {
+  background-color: mediumpurple;
+  color: black;
+}
+
+.form button:disabled,
+.form button:disabled:hover,
+.form button:disabled:active {
+  background-color: #ccc;
+  color: black;
+  border-color: #ccc;
+  cursor: not-allowed;
+}

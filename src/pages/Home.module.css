@@ -1,0 +1,26 @@
+.home {
+  justify-content: space-around;
+  align-items: center;
+  padding: auto;
+  display: block;
+}
+
+.button {
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background-color: #420079;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  margin-top: 15rem;
+}
+
+.button:hover,
+.button:active {
+  background-color: mediumpurple;
+  color: black;
+}

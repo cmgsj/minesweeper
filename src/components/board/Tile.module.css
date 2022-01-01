@@ -1,0 +1,17 @@
+.cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  width: 28px;
+  height: 28px;
+  background-color: lightgray;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.cell img {
+  height: 100%;
+  width: 100%;
+  font-size: small;
+}
