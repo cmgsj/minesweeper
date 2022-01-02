@@ -18,7 +18,11 @@ type BoardState = {
   userLost: boolean;
   initialized: boolean;
 };
-export type BoardConfig = { rows: number; columns: number; mines: number };
+export type BoardConfig = {
+  rows: number;
+  columns: number;
+  mines: number;
+};
 
 export const defaultBoardConfig: BoardConfig = {
   rows: 9,
@@ -41,7 +45,7 @@ const boardSlice = createSlice({
   name: 'board',
   initialState: initialBoardState,
   reducers: {
-    createEmptyBoard: (state, action: { payload: BoardConfig }) => {
+    createEmptyBoard: (state, action) => {
       state.rows = action.payload.rows;
       state.columns = action.payload.columns;
       state.mines = action.payload.mines;
@@ -69,10 +73,27 @@ const boardSlice = createSlice({
       }
     },
 
-    placeMinesExcept: (
-      state,
-      action: { payload: { row: number; column: number } }
-    ) => {
+    createPreviousBoard: (state) => {
+      const rowsText = localStorage.getItem('rows');
+      const columnsText = localStorage.getItem('columns');
+      const minesText = localStorage.getItem('mines');
+      if (rowsText && columnsText && minesText) {
+        const rows = parseInt(rowsText);
+        const columns = parseInt(columnsText);
+        const mines = parseInt(minesText);
+        boardSlice.caseReducers.createEmptyBoard(state, {
+          payload: { rows: rows, columns: columns, mines: mines },
+          type: '',
+        });
+      } else {
+        boardSlice.caseReducers.createEmptyBoard(state, {
+          payload: defaultBoardConfig,
+          type: '',
+        });
+      }
+    },
+
+    fillBoard: (state, action) => {
       for (let i = 1; i <= state.mines; i++) {
         let randomRow = Math.floor(Math.random() * state.rows);
         let randomCol = Math.floor(Math.random() * state.columns);
@@ -86,9 +107,6 @@ const boardSlice = createSlice({
           i--;
         }
       }
-    },
-
-    placeValues: (state) => {
       const star = [
         [0, 1],
         [1, 1],
@@ -116,103 +134,6 @@ const boardSlice = createSlice({
           }
           state.board[row][col].value = sum;
         }
-      }
-    },
-
-    createBoard: (
-      state,
-      action: {
-        payload: {
-          firstTile: { row: number; column: number };
-        };
-      }
-    ) => {
-      // state.rows = action.payload.rows;
-      // state.columns = action.payload.columns;
-      // state.mines = action.payload.mines;
-      // localStorage.setItem('rows', state.rows.toString());
-      // localStorage.setItem('columns', state.columns.toString());
-      // localStorage.setItem('mines', state.mines.toString());
-      // state.board = [];
-      // state.score = 0;
-      // state.userLost = false;
-      // state.userWon = false;
-      // for (let row = 0; row < state.rows; row++) {
-      //   let thisRow: Tile[] = [];
-      //   for (let col = 0; col < state.columns; col++) {
-      //     let id = row.toString() + col.toString();
-      //     thisRow.push({
-      //       id: id,
-      //       value: 0,
-      //       show: false,
-      //       flagged: false,
-      //       mined: false,
-      //     });
-      //   }
-      //   state.board.push(thisRow);
-      // }
-
-      // for (let i = 1; i <= state.mines; i++) {
-      //   let randomRow = Math.floor(Math.random() * state.rows);
-      //   let randomCol = Math.floor(Math.random() * state.columns);
-      //   if (!state.board[randomRow][randomCol].mined) {
-      //     state.board[randomRow][randomCol].mined = true;
-      //   } else {
-      //     i--;
-      //     continue;
-      //   }
-      // }
-
-      // const star = [
-      //   [0, 1],
-      //   [1, 1],
-      //   [1, 0],
-      //   [1, -1],
-      //   [0, -1],
-      //   [-1, -1],
-      //   [-1, 0],
-      //   [-1, 1],
-      // ];
-      // for (let row = 0; row < state.rows; row++) {
-      //   for (let col = 0; col < state.columns; col++) {
-      //     let sum = 0;
-      //     for (let i = 0; i < star.length; i++) {
-      //       if (
-      //         row + star[i][0] >= 0 &&
-      //         row + star[i][0] < state.rows &&
-      //         col + star[i][1] >= 0 &&
-      //         col + star[i][1] < state.columns
-      //       ) {
-      //         if (state.board[row + star[i][0]][col + star[i][1]].mined) {
-      //           sum++;
-      //         }
-      //       }
-      //     }
-      //     state.board[row][col].value = sum;
-      //   }
-      // }
-
-      boardSlice.caseReducers.placeMinesExcept(state, {
-        payload: action.payload.firstTile,
-      });
-      boardSlice.caseReducers.placeValues(state);
-    },
-
-    createPreviousBoard: (state) => {
-      const rowsText = localStorage.getItem('rows');
-      const columnsText = localStorage.getItem('columns');
-      const minesText = localStorage.getItem('mines');
-      if (rowsText && columnsText && minesText) {
-        const rows = parseInt(rowsText);
-        const columns = parseInt(columnsText);
-        const mines = parseInt(minesText);
-        boardSlice.caseReducers.createEmptyBoard(state, {
-          payload: { rows: rows, columns: columns, mines: mines },
-        });
-      } else {
-        boardSlice.caseReducers.createEmptyBoard(state, {
-          payload: defaultBoardConfig,
-        });
       }
     },
 
@@ -286,8 +207,8 @@ const boardSlice = createSlice({
             ) {
               if (
                 state.board[row + cross[i][0]][col + cross[i][1]].value === 0 &&
-                !state.board[row + cross[i][0]][col + cross[i][1]].flagged && //
-                !state.board[row + cross[i][0]][col + cross[i][1]].mined //
+                !state.board[row + cross[i][0]][col + cross[i][1]].flagged &&
+                !state.board[row + cross[i][0]][col + cross[i][1]].mined
               ) {
                 state.board[row + cross[i][0]][col + cross[i][1]].show = true;
                 for (let i = 0; i < star.length; i++) {
@@ -329,8 +250,9 @@ const boardSlice = createSlice({
       const row = action.payload.row;
       const col = action.payload.col;
       if (!state.initialized) {
-        boardSlice.caseReducers.createBoard(state, {
-          payload: { firstTile: { row: row, column: col } },
+        boardSlice.caseReducers.fillBoard(state, {
+          payload: { row: row, column: col },
+          type: '',
         });
         state.initialized = true;
       }

@@ -1,17 +1,14 @@
-import { RootStateOrAny, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 import Tile from './Tile';
 import styles from './Board.module.css';
 
 const Board = () => {
-  const boardItems = useSelector(
-    (state: RootStateOrAny) => state.gameBoard.board
-  );
+  const boardItems = useSelector((state: RootState) => state.gameBoard.board);
 
-  const rows = useSelector((state: RootStateOrAny) => state.gameBoard.rows);
-  const columns = useSelector(
-    (state: RootStateOrAny) => state.gameBoard.columns
-  );
+  const rows = useSelector((state: RootState) => state.gameBoard.rows);
+  const columns = useSelector((state: RootState) => state.gameBoard.columns);
 
   let board = [];
   for (let row = 0; row < boardItems.length; row++) {
@@ -26,9 +23,9 @@ const Board = () => {
   const width = (columns * 30).toString().concat('px');
 
   return (
-    <div className={styles.board} style={{ height: height, width: width }}>
+    <section className={styles.board} style={{ height: height, width: width }}>
       {board}
-    </div>
+    </section>
   );
 };
 

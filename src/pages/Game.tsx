@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { boardActions } from '../redux/board';
-
+import { RootState } from '../redux/store';
 import Board from '../components/board/Board';
 import GameModal from '../components/modal/GameModal';
 import styles from './Game.module.css';
@@ -12,16 +12,16 @@ const Game = () => {
 
   const dispatch = useDispatch();
 
-  const userWon = useSelector(
-    (state: RootStateOrAny) => state.gameBoard.userWon
-  );
-  const userLost = useSelector(
-    (state: RootStateOrAny) => state.gameBoard.userLost
-  );
+  const userWon = useSelector((state: RootState) => state.gameBoard.userWon);
+  const userLost = useSelector((state: RootState) => state.gameBoard.userLost);
 
   useEffect(() => {
-    if (userWon || userLost) {
-      setMessage((userWon && 'Won') || (userLost && 'Lost'));
+    if (userWon) {
+      setMessage('Won');
+      setShowModal(true);
+    }
+    if (userLost) {
+      setMessage('Lost');
       setShowModal(true);
     }
   }, [userWon, userLost]);

@@ -1,10 +1,11 @@
-import { useSelector, RootStateOrAny } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
+import { RootState } from '../../redux/store';
 import styles from './MainNavigation.module.css';
 
 const MainNavigation = () => {
   const location = useLocation();
-  const score = useSelector((state: RootStateOrAny) => state.gameBoard.score);
+  const score = useSelector((state: RootState) => state.gameBoard.score);
 
   return (
     <header className={styles.header}>

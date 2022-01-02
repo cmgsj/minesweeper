@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
 import Home from './pages/Home';
 import Layout from './components/layout/Layout';
 import Game from './pages/Game';
