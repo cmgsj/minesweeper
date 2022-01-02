@@ -10,7 +10,7 @@
   font-weight: bold;
   cursor: pointer;
   color: white;
-  background-color: #420079;
+  background-color: slategray;
   border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
@@ -21,6 +21,6 @@
 
 .button:hover,
 .button:active {
-  background-color: mediumpurple;
+  background-color: lightslategray;
   color: black;
 }

@@ -10,9 +10,8 @@
 
 .form label {
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2rem;
   color: black;
-  font-family:monospace;
 }
 
 .form span {
@@ -24,7 +23,6 @@
 
 .bottom {
   display: block;
-
 }
 
 input[type='range'] {
@@ -47,10 +45,10 @@ input[type='range']::-webkit-slider-runnable-track {
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 1.1em;
-  width: 1.1em;
+  height: 1rem;
+  width: 1rem;
   border-radius: 50%;
-  background: dimgray;
+  background: slategray;
   margin-top: -4px;
 }
 
@@ -63,11 +61,10 @@ input[type='range']:focus {
   font-weight: bold;
   cursor: pointer;
   color: white;
-  background-color: #420079;
+  background-color: slategray;
   border: 1px solid black;
   border-radius: 10px;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 10px;
   margin: 1rem;
   height: 3rem;
@@ -75,15 +72,15 @@ input[type='range']:focus {
 
 .form button:hover,
 .form button:active {
-  background-color: mediumpurple;
+  background-color: lightslategray;
   color: black;
 }
 
 .form button:disabled,
 .form button:disabled:hover,
 .form button:disabled:active {
-  background-color: #ccc;
+  background-color: rgb(150, 150, 150);
   color: black;
-  border-color: #ccc;
+  border-color: rgb(150, 150, 150);
   cursor: not-allowed;
 }

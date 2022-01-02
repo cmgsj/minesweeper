@@ -53,7 +53,7 @@ const boardSlice = createSlice({
       localStorage.setItem('columns', state.columns.toString());
       localStorage.setItem('mines', state.mines.toString());
       state.board = [];
-      state.score = 0;
+      state.score = state.mines;
       state.userLost = false;
       state.userWon = false;
       state.initialized = false;
@@ -97,7 +97,13 @@ const boardSlice = createSlice({
       const row = action.payload.row;
       const col = action.payload.col;
       if (!state.board[row][col].show) {
-        state.board[row][col].flagged = !state.board[row][col].flagged;
+        if (!state.board[row][col].flagged) {
+          state.score--;
+          state.board[row][col].flagged = true;
+        } else {
+          state.score++;
+          state.board[row][col].flagged = false;
+        }
       }
     },
 
@@ -110,9 +116,6 @@ const boardSlice = createSlice({
           type: '',
         });
         state.initialized = true;
-      }
-      if (!state.board[row][col].mined && !state.board[row][col].show) {
-        state.score += 5;
       }
       if (!state.board[row][col].flagged) {
         state.board[row][col].show = true;

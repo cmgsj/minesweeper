@@ -15,17 +15,17 @@
   font: inherit;
   font-weight: bold;
   font-size: large;
-  color: #420079;
+  color: black;
   background-color: none;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-  border-color: #420079;
+  border-radius: 10px;
+  border-color: black;
 }
 
 .link:hover,
 .link:active {
-  background-color: #420079;
+  background-color: slategray;
   color: white;
 }
 
@@ -36,15 +36,15 @@
   font: inherit;
   font-weight: bold;
   font-size: large;
-  color: #420079;
+  color: black;
   background-color: white;
   padding: 0.75rem 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
 }
 
 .button:hover,
 .button:active {
-  background-color: #420079;
+  background-color: slategray;
   color: white;
 }

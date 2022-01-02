@@ -1,18 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  height: 4rem;
+}
+
+.score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+}
+
 .button {
   font-size: large;
   font-weight: bold;
   cursor: pointer;
   color: white;
-  background-color: #420079;
+  background-color: slategray;
   border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
-  margin-bottom: 1rem;
 }
 
 .button:hover,
 .button:active {
-  background-color: mediumpurple;
+  background-color: lightslategray;
   color: black;
 }
