@@ -60,7 +60,7 @@ const boardSlice = createSlice({
       for (let row = 0; row < state.rows; row++) {
         let thisRow: Tile[] = [];
         for (let col = 0; col < state.columns; col++) {
-          let id = row.toString() + col.toString();
+          let id = row.toString() + '-' + col.toString();
           thisRow.push({
             id: id,
             value: 0,

@@ -36,7 +36,7 @@ const Game = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {showModal && <GameModal text={message} />}
       <button className={styles.button} onClick={resetGameHandler}>
         Reset

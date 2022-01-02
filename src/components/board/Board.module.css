@@ -1,13 +1,25 @@
 .board {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   flex: 1;
   flex-grow: 1;
   border: 1px solid black;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
+
   /*text-align: justify;
    position: absolute;
   left: 0;
   right: 0; */
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+.board ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
