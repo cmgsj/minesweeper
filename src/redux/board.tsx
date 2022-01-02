@@ -93,6 +93,34 @@ const boardSlice = createSlice({
       }
     },
 
+    flagTile: (state, action) => {
+      const row = action.payload.row;
+      const col = action.payload.col;
+      if (!state.board[row][col].show) {
+        state.board[row][col].flagged = !state.board[row][col].flagged;
+      }
+    },
+
+    revealTile: (state, action) => {
+      const row = action.payload.row;
+      const col = action.payload.col;
+      if (!state.initialized) {
+        boardSlice.caseReducers.fillBoard(state, {
+          payload: { row: row, column: col },
+          type: '',
+        });
+        state.initialized = true;
+      }
+      if (!state.board[row][col].mined && !state.board[row][col].show) {
+        state.score += 5;
+      }
+      if (!state.board[row][col].flagged) {
+        state.board[row][col].show = true;
+        boardSlice.caseReducers.revealAdjacentTiles(state, action);
+        boardSlice.caseReducers.checkGameStatus(state);
+      }
+    },
+
     fillBoard: (state, action) => {
       for (let i = 1; i <= state.mines; i++) {
         let randomRow = Math.floor(Math.random() * state.rows);
@@ -193,7 +221,6 @@ const boardSlice = createSlice({
         let ids = [
           action.payload.row.toString() + '-' + action.payload.col.toString(),
         ];
-
         while (tilesToCheck.length > 0) {
           let row = tilesToCheck[0].row;
           let col = tilesToCheck[0].col;
@@ -243,34 +270,6 @@ const boardSlice = createSlice({
           }
           tilesToCheck.shift();
         }
-      }
-    },
-
-    revealTile: (state, action) => {
-      const row = action.payload.row;
-      const col = action.payload.col;
-      if (!state.initialized) {
-        boardSlice.caseReducers.fillBoard(state, {
-          payload: { row: row, column: col },
-          type: '',
-        });
-        state.initialized = true;
-      }
-      if (!state.board[row][col].mined && !state.board[row][col].show) {
-        state.score += 5;
-      }
-      if (!state.board[row][col].flagged) {
-        state.board[row][col].show = true;
-        boardSlice.caseReducers.revealAdjacentTiles(state, action);
-        boardSlice.caseReducers.checkGameStatus(state);
-      }
-    },
-
-    flagTile: (state, action) => {
-      const row = action.payload.row;
-      const col = action.payload.col;
-      if (!state.board[row][col].show) {
-        state.board[row][col].flagged = !state.board[row][col].flagged;
       }
     },
   },
