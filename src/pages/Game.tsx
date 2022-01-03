@@ -16,6 +16,9 @@ const Game = () => {
   const userWon = useSelector((state: RootState) => state.gameBoard.userWon);
   const userLost = useSelector((state: RootState) => state.gameBoard.userLost);
   const score = useSelector((state: RootState) => state.gameBoard.score);
+  const gameStarted = useSelector(
+    (state: RootState) => state.gameBoard.initialized
+  );
 
   useEffect(() => {
     if (userWon) {
@@ -29,15 +32,20 @@ const Game = () => {
   }, [userWon, userLost]);
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      if (gameStarted && !userLost && !userWon) {
+        setSeconds((prevState) => prevState + 1);
+      }
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [gameStarted, userLost, userWon, seconds]);
+
+  useEffect(() => {
     setShowModal(false);
     dispatch(boardActions.createPreviousBoard());
   }, [dispatch]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSeconds((prevState) => prevState + 1);
-    }, 1000);
-  }, [seconds]);
 
   const resetGameHandler = () => {
     dispatch(boardActions.createPreviousBoard());
@@ -47,15 +55,11 @@ const Game = () => {
     <div>
       {showModal && <GameModal text={message} />}
       <div className={styles.header}>
-        <span className={styles.score}>
-          {'0'.repeat(3 - score.toString().length) + score}
-        </span>
+        <span>{'0'.repeat(3 - score.toString().length) + score}</span>
         <button className={styles.button} onClick={resetGameHandler}>
           Reset
         </button>
-        <span className={styles.timer}>
-          {'0'.repeat(3 - seconds.toString().length) + seconds}
-        </span>
+        <span>{'0'.repeat(3 - seconds.toString().length) + seconds}</span>
       </div>
       <Board />
     </div>

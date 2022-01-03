@@ -27,7 +27,7 @@ const Tile: React.FC<Props> = (props) => {
     dispatch(boardActions.revealTile({ row, col }));
   };
 
-  const rightClickHandler = (event: any) => {
+  const rightClickHandler = (event: React.MouseEvent) => {
     event.preventDefault();
     dispatch(boardActions.flagTile({ row, col }));
   };
@@ -46,12 +46,12 @@ const Tile: React.FC<Props> = (props) => {
 
   const color = colorsList[tile.value];
 
-  let content: JSX.Element | string = <img src={block} alt='block tile' />;
+  let content = <img src={block} alt='block tile' />;
   if (tile.show) {
-    if (!tile.mined) {
-      content = tile.value !== 0 ? tile.value.toString() : '';
-    } else {
+    if (tile.mined) {
       content = <img src={userWon ? mine : redMine} alt='mine tile' />;
+    } else {
+      content = <span>{tile.value !== 0 ? tile.value.toString() : ''} </span>;
     }
   }
 

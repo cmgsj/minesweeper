@@ -1,25 +1,19 @@
 .header {
   display: flex;
-  justify-content: space-around;
   border: 2px solid black;
-  text-align: center;
+  border-radius: 20px;
   align-items: center;
   margin-bottom: 1rem;
   height: 4rem;
+  justify-content: space-evenly;
 }
 
-.score {
+.header span {
   font-size: 2rem;
   font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: black;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.timer {
-  font-size: 2rem;
-  font-weight: bold;
-  color: black;
-  font-family: 'Orbitron', sans-serif;
 }
 
 .button {

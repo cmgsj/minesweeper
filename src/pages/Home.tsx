@@ -31,7 +31,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className={styles.home}>
+    <div>
       {!showForm && (
         <button className={styles.button} onClick={showFormHandler}>
           New Game

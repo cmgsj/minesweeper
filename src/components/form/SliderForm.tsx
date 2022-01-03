@@ -59,7 +59,7 @@ const SliderFrom: React.FC<Props> = (props) => {
         <input
           type='range'
           min='3'
-          max='15'
+          max='24'
           step='1'
           value={rowsInput}
           onChange={rowsSliderChangeHandler}
@@ -71,7 +71,7 @@ const SliderFrom: React.FC<Props> = (props) => {
         <input
           type='range'
           min='3'
-          max='15'
+          max='12'
           step='1'
           value={columnsInput}
           onChange={columnsSliderChangeHandler}
@@ -83,14 +83,14 @@ const SliderFrom: React.FC<Props> = (props) => {
         <input
           type='range'
           min='1'
-          max='25'
+          max='48'
           step='1'
           value={minesInput}
           onChange={minesSliderChangeHandler}
         />
         <span>{minesInput}</span>
       </div>
-      <div className={styles.bottom}>
+      <div className={styles.buttons}>
         <button type='button' onClick={props.onHide}>
           Cancel
         </button>
