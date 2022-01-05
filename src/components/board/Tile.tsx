@@ -20,16 +20,13 @@ const Tile: React.FC<Props> = (props) => {
   );
   const userWon = useSelector((state: RootState) => state.gameBoard.userWon);
 
-  const row = props.row;
-  const col = props.col;
-
   const leftClickHandler = () => {
-    dispatch(boardActions.revealTile({ row, col }));
+    dispatch(boardActions.revealTile({ row: props.row, col: props.col }));
   };
 
   const rightClickHandler = (event: React.MouseEvent) => {
     event.preventDefault();
-    dispatch(boardActions.flagTile({ row, col }));
+    dispatch(boardActions.flagTile({ row: props.row, col: props.col }));
   };
 
   const colorsList = [
