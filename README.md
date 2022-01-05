@@ -1,6 +1,6 @@
 ### Classic MineSweeper Game
 ![image](/screenshots/1-home-screen.png | width=250)
-<img src='/screenshots/1-home-screen.png' width='500' height='500' />
+<img src='/screenshots/1-home-screen.png' width='500' height='500' >
 ![image](/screenshots/2-game-config.png)
 ![image](/screenshots/3-game-in-progress-1.png)
 ![image](/screenshots/4-game-in-progress-2.png)
