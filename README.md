@@ -1,4 +1,4 @@
-### Classic MineSweeper Game
+# Classic MineSweeper Game
 
 ## Screenshots
 <img src='/screenshots/1-home-screen.png' height='500' width='500' />
