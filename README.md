@@ -1,5 +1,5 @@
 ### Classic MineSweeper Game
-![image](/screenshots/1-home-screen.png)
+![image](/screenshots/1-home-screen.png =250x250)
 ![image](/screenshots/2-game-config.png)
 ![image](/screenshots/3-game-in-progress-1.png)
 ![image](/screenshots/4-game-in-progress-2.png)
