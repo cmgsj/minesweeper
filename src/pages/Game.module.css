@@ -1,18 +1,18 @@
 .header {
   display: flex;
-  border: 2px solid black;
-  border-radius: 20px;
-  align-items: center;
-  margin-bottom: 1rem;
-  height: 4rem;
   justify-content: space-evenly;
+  align-items: center;
+  height: 4rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-bottom: 1rem;
 }
 
 .header span {
   font-size: 2rem;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    'Lucida Sans Unicode', Verdana, sans-serif;
   color: black;
 }
 
@@ -21,15 +21,14 @@
   font-weight: bold;
   cursor: pointer;
   color: white;
-  background-color: slategray;
+  background-color: dodgerblue;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
 }
 
 .button:hover,
 .button:active {
-  background-color: lightslategray;
   color: black;
 }

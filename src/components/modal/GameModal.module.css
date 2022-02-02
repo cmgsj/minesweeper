@@ -11,40 +11,36 @@
 .link {
   margin-left: 1rem;
   margin-right: 1rem;
-  cursor: pointer;
   font: inherit;
   font-weight: bold;
   font-size: large;
   color: black;
-  background-color: none;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  border-color: black;
+  padding: 1rem;
+  border-radius: 25px;
 }
 
 .link:hover,
 .link:active {
-  background-color: slategray;
+  background-color: dodgerblue;
   color: white;
 }
 
 .button {
   margin-left: 1rem;
   margin-right: 1rem;
-  cursor: pointer;
   font: inherit;
   font-weight: bold;
   font-size: large;
   color: black;
   background-color: lightgray;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 25px;
   border: none;
 }
 
 .button:hover,
 .button:active {
-  background-color: slategray;
+  background-color: dodgerblue;
   color: white;
 }

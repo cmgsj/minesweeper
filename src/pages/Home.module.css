@@ -1,19 +1,16 @@
 .button {
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
-  cursor: pointer;
   color: white;
-  background-color: slategray;
+  background-color: dodgerblue;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  margin-top: 15rem;
+  padding: 1rem;
+  margin-top: 10rem;
 }
 
 .button:hover,
 .button:active {
-  background-color: lightslategray;
   color: black;
 }

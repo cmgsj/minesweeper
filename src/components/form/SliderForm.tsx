@@ -55,7 +55,9 @@ const SliderFrom: React.FC<Props> = (props) => {
   return (
     <form className={styles.form} onSubmit={submitFormHandler}>
       <div>
-        <label>Rows</label>
+        <label>Rows: </label>
+        <span>{rowsInput}</span>
+      </div>
         <input
           type='range'
           min='3'
@@ -64,10 +66,10 @@ const SliderFrom: React.FC<Props> = (props) => {
           value={rowsInput}
           onChange={rowsSliderChangeHandler}
         />
-        <span>{rowsInput}</span>
-      </div>
       <div>
-        <label>Columns</label>
+        <label>Columns: </label>
+        <span>{columnsInput}</span>
+      </div>
         <input
           type='range'
           min='3'
@@ -76,10 +78,10 @@ const SliderFrom: React.FC<Props> = (props) => {
           value={columnsInput}
           onChange={columnsSliderChangeHandler}
         />
-        <span>{columnsInput}</span>
-      </div>
       <div>
-        <label>Mines</label>
+        <label>Mines: </label>
+        <span>{minesInput}</span>
+      </div>
         <input
           type='range'
           min='1'
@@ -88,8 +90,6 @@ const SliderFrom: React.FC<Props> = (props) => {
           value={minesInput}
           onChange={minesSliderChangeHandler}
         />
-        <span>{minesInput}</span>
-      </div>
       <div className={styles.buttons}>
         <button type='button' onClick={props.onHide}>
           Cancel
