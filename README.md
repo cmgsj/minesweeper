@@ -1,7 +1,7 @@
 # Classic MineSweeper Game
 
 ## Developed with:
-- React, Redux, Router, TypeScript.
+- React, Redux Toolkit, Router, TypeScript.
 
 ## Screenshots
 <img src='/screenshots/1-home-screen.png' height='400' width='400' /> <img src='/screenshots/2-game-config.png' height='400' width='400' />
