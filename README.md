@@ -1,14 +1,10 @@
 # Classic MineSweeper Game
-
 ## Developed with:
 - React, Redux Toolkit, Router, TypeScript.
-
 ## Screenshots
-<img src='/screenshots/1-home-screen.png' height='400' width='400' /> <img src='/screenshots/2-game-config.png' height='400' width='400' />
-<img src='/screenshots/3-game-in-progress-1.png' height='400' width='400' /> <img src='/screenshots/4-game-in-progress-2.png' height='400' width='400' />
-<img src='/screenshots/5-game-in-progress-3.png' height='400' width='400' /> <img src='/screenshots/6-game-in-progress-4.png' height='400' width='400' />
-<img src='/screenshots/7-game-won.png' height='400' width='400' /> <img src='/screenshots/8-game-lost.png' height='400' width='400' />
-
+<img src='/screenshots/home.png' height='400' width='400' /> <img src='/screenshots/board-config.png' height='400' width='400' />
+<img src='/screenshots/new-game.png' height='400' width='400' /> <img src='/screenshots/game-in-progress.png' height='400' width='400' />
+<img src='/screenshots/game-won.png' height='400' width='400' /> <img src='/screenshots/game-lost.png' height='400' width='400' />
 ## Features
 - Customize your new game's number of rows, columns and mines.
 - Guaranty that there will be no mine on the first tile you click.
