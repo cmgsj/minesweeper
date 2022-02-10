@@ -2,9 +2,9 @@
 ## Developed with:
 - React, Redux Toolkit, Router, TypeScript.
 ## Screenshots
-<img src='/screenshots/home.png' height='300' width='400' /> <img src='/screenshots/board-config.png' height='300' width='400' />
-<img src='/screenshots/new-game.png' height='300' width='400' /> <img src='/screenshots/game-in-progress.png' height='300' width='400' />
-<img src='/screenshots/game-won.png' height='300' width='400' /> <img src='/screenshots/game-lost.png' height='300' width='400' />
+<img src='/screenshots/home.png' height='350' width='400' /> <img src='/screenshots/board-config.png' height='350' width='400' />
+<img src='/screenshots/new-game.png' height='350' width='400' /> <img src='/screenshots/game-in-progress.png' height='350' width='400' />
+<img src='/screenshots/game-won.png' height='350' width='400' /> <img src='/screenshots/game-lost.png' height='350' width='400' />
 ## Features
 - Customize your new game's number of rows, columns and mines.
 - Guaranty that there will be no mine on the first tile you click.
